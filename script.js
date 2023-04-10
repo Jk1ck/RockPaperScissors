@@ -1,3 +1,21 @@
+const compiterIcon = '<i class="fa-solid fa-computer"></i>';
+const icons = [compiterIcon, "<p>.</p>","<p>..</p>","<p>...</p>"];
+let index = 0;
+const iconElement = document.getElementById("my-icon");
+
+console.log(typeof(iconElement));
+console.log(iconElement);
+
+setInterval(() => {
+    index = (index + 1) % icons.length; 
+    iconElement.innerHTML = icons[index]; 
+  }, 800);
+
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+const statusBar = document.getElementById('status-bar');
+
 let userInput,
     computerChoice,
     playerChoice,
@@ -17,8 +35,16 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    userInput = prompt("Type what you choose(Rock, Paper or Scissors):")
-    return userInput.toLowerCase();
+    rock.addEventListener('click', () => {
+        playerChoice='rock';
+    });
+    paper.addEventListener('click', () => {
+        playerChoice='paper';
+    });
+    scissors.addEventListener('click', () => {
+        playerChoice='scissors';
+    });
+    return playerChoice;
 }
 
 function playRound(playerChoice, computerChoice){
@@ -38,8 +64,8 @@ function playRound(playerChoice, computerChoice){
                 if (computerChoice==="rock") return "computer"; else return "player";
             }
             break;
-        default:
-            console.log("Invalid input");
+        // default:
+        //     console.log("Invalid input");
     }
 }
 
@@ -49,20 +75,19 @@ function game(){
     playerScore=0;
     computerScore=0;
     while (i<=5) {
-        alert("This is round number:"+i)
         playerChoice=getPlayerChoice();
         computerChoice=getComputerChoice();
-        alert("You chose "+playerChoice+"\n Computer chose "+computerChoice);
+        console.log("You chose "+playerChoice+"\n Computer chose "+computerChoice);
         roundStatus=playRound(playerChoice,computerChoice);
         if (roundStatus==="player"){ 
             playerScore++;
             i++;
-            alert("You won the round! The score is "+playerScore+"-"+computerScore);
+            statusBar.textContent='You won the round! The score is ${playerScore} - ${computerScore}';
         } else if (roundStatus==="computer"){
             computerScore++;
             i++;
-            alert("You lost the round :( The score is "+playerScore+"-"+computerScore);
-          } else alert("It's a tie! Current score:"+playerScore+"-"+computerScore);
+            //alert("You lost the round :( The score is "+playerScore+"-"+computerScore);
+          } //else alert("It's a tie! Current score:"+playerScore+"-"+computerScore);
     }
     if (playerScore>computerScore){
         alert("Congrats you won the game wowowo")
@@ -71,6 +96,5 @@ function game(){
 }
 
 
-alert("Hello! You are playing a game of Rock, Paper, Scissors.");
 game();
 

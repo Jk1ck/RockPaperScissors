@@ -1,0 +1,136 @@
+body{
+    height: 100vh;
+    margin: 0;
+    background:#1c2738;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 12px;
+}
+
+.logo{
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header svg{
+  margin-right: 10px; 
+  margin-top: 3px; 
+  color: white;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    flex: 1;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 80px 10px 10px 10px;
+    height: 90%;
+}
+
+#status-bar{
+    font-size: 36px;
+    color: #EAEAEA;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.score-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-container, .scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scores {
+    gap: 150px;
+}
+
+#computer-score, #player-score {
+    color: #6d7883;
+    font-size: 120px;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.computer-choice{
+    width: 150px;
+    height: 150px;
+    margin-top: 70px;
+    font-size: 120px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#D1D6EF;
+}
+
+.computer-choice p{
+    margin-bottom: 180px ;
+}
+
+.computer-choice i, .options-container i {
+    font-size: 120px;
+    color: #D1D1D1;
+}
+
+.computer-choice i {
+    color: #D1D6EF;
+}
+
+.options-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 110px;
+    margin-top: 180px;
+}
+
+.options-container button{
+    border: 4px solid #D1D1D1;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.options-container button:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    height: 45px;
+    background-color: #2f415e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(203, 210, 216);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
